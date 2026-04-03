@@ -1,0 +1,22 @@
+.wbg-page-container {
+    min-height: 100vh;
+    background-color: #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    padding: 100px 1rem 2rem 1rem;
+}
+
+
+/* Header Styles matching the screenshot */
+
+/* GP Top Bar Styles removed to use shared SelectionNavbar component */
+
+
+.wbg-content {
+    padding: 0;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

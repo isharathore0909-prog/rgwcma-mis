@@ -1,0 +1,321 @@
+/* Global Printing Styles for MIS RSGWA Reports */
+
+@media screen {
+    .screen-only-hidden {
+        display: none !important;
+    }
+
+    .print-layout-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .print-layout-header-spacer,
+    .print-layout-footer-spacer {
+        display: none;
+    }
+}
+
+@media print {
+    @page {
+        /* Setting margin to 0 removes the browser's default header/footer text (date, URL, etc.) */
+        margin: 0 !important;
+        size: A4 portrait;
+    }
+
+    .no-print,
+    .header-container {
+        display: none !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+
+    html,
+    body {
+        margin: 0 !important;
+        background-color: white !important;
+        width: 100% !important;
+        /* Body padding only for left/right side margins */
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-left: 5mm !important;
+        padding-right: 5mm !important;
+        box-sizing: border-box !important;
+        /* Ultra-Compact typography */
+        font-size: 9pt !important;
+        line-height: 1.15 !important;
+        /* Force background colors to print */
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+    }
+
+
+
+    /* Target the main wrapper - Reset now that table handles spacing */
+    .wa-report-paper-wrapper {
+        position: relative !important;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        box-shadow: none !important;
+        background: white !important;
+        box-sizing: border-box !important;
+    }
+
+    .report-grey-section,
+    .printable-report {
+        position: relative !important;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        box-shadow: none !important;
+        background: white !important;
+    }
+
+    /* Ensure content area respects header/footer space */
+    .wa-report-content,
+    .impact-full-report,
+    .impact-report-sections {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        /* Ensure content doesn't overflow into header/footer zones */
+        min-height: 0 !important;
+    }
+
+    /* Print-only elements */
+    .print-only {
+        display: block !important;
+    }
+
+    /* Table-based layout to ensure header/footer spacing on every page */
+    table.print-layout-table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        table-layout: auto !important;
+        /* Changed from fixed to allow more flexibility */
+        border: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .print-layout-table td {
+        border: none !important;
+        padding: 0 !important;
+        vertical-align: top !important;
+    }
+
+    /* Global reset for any other tables that might have borders */
+    table,
+    tr,
+    td,
+    th {
+        border-color: transparent !important;
+    }
+
+    /* Keep actual data tables' borders if they are intentional */
+    .wa-report-content table td,
+    .wa-report-content table th {
+        border-color: #000 !important;
+        padding: 2px 4px !important;
+    }
+
+    .print-layout-header-spacer {
+        height: 30mm !important;
+    }
+
+    .print-layout-footer-spacer {
+        height: 15mm !important;
+    }
+
+    .print-layout-table thead {
+        display: table-header-group !important;
+    }
+
+    .print-layout-table tfoot {
+        display: table-footer-group !important;
+    }
+
+    .screen-only-hidden {
+        display: block !important;
+    }
+
+    /* Header/Footer Repeaters - Transitioning to table groups for better browser support */
+    .print-header-repeat {
+        display: none !important;
+        /* Hide fixed one, we'll use table header instead */
+    }
+
+    .print-layout-table thead {
+        display: table-header-group !important;
+    }
+
+    .print-layout-table tfoot {
+        display: table-footer-group !important;
+    }
+
+    .header-group-content {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 5mm 2mm !important;
+        height: 30mm !important;
+        background-color: white !important;
+        border-bottom: 2.5px solid #1a365d !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Hide repeating header on first page only using page context */
+    @page :first {
+        margin-top: 0 !important;
+    }
+
+    /* On first page, hide the small repeating header */
+    .print-header-repeat {
+        page-break-before: avoid !important;
+    }
+
+
+
+    /* First page mask - positioned absolutely within the first printable container */
+    .first-page-mask {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: 30mm !important;
+        background-color: white !important;
+        z-index: 99999 !important;
+        display: block !important;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+    }
+
+    /* Ensure the printable report is positioned relative for the mask */
+    .printable-report {
+        position: relative !important;
+    }
+
+    .print-header-content {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 0 10mm !important;
+        height: 100% !important;
+    }
+
+    .mini-branding-section {
+        display: flex !important;
+        align-items: center !important;
+        gap: 15px !important;
+    }
+
+    .mini-print-logo,
+    .mini-print-emblem {
+        height: 16mm !important;
+        width: auto !important;
+    }
+
+    .mini-separator {
+        width: 2px !important;
+        height: 16mm !important;
+        background: #1a365d !important;
+    }
+
+    .mini-authority {
+        font-size: 1.15rem !important;
+        font-weight: 800 !important;
+        color: #1a365d !important;
+        text-transform: uppercase !important;
+        font-family: 'Outfit', sans-serif !important;
+        line-height: 1.2 !important;
+    }
+
+    .mini-report-title {
+        font-size: 1rem !important;
+        font-weight: 700 !important;
+        color: #475569 !important;
+        letter-spacing: 0.5px !important;
+        font-family: 'Outfit', sans-serif !important;
+        text-transform: uppercase !important;
+    }
+
+    /* Fixed Footer - Transitioning to table groups */
+    .print-footer-repeat {
+        display: none !important;
+        /* Hide fixed one */
+    }
+
+    .footer-group-content {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 0 5mm !important;
+        height: 15mm !important;
+        background-color: white !important;
+        border-top: 1px solid #ccc !important;
+        box-sizing: border-box !important;
+    }
+
+    .print-footer-content {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 0 15mm !important;
+        font-size: 0.85rem !important;
+        color: #000 !important;
+        font-weight: 800 !important;
+    }
+
+
+
+    /* Prevent breaking blocks across pages */
+    .figure-item,
+    .table-container,
+    .annex-container,
+    .wa-report-header {
+        page-break-inside: avoid !important;
+    }
+
+    /* Compact mode overrides */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 4px !important;
+        margin-bottom: 2px !important;
+    }
+
+    p {
+        margin-top: 2px !important;
+        margin-bottom: 2px !important;
+    }
+
+    .section-head,
+    .sub-section-head {
+        padding: 4px 8px !important;
+    }
+
+    .figure-item {
+        margin-bottom: 8px !important;
+        padding: 4px !important;
+    }
+
+    .chart-title {
+        font-size: 0.85rem !important;
+        margin-bottom: 4px !important;
+    }
+}

@@ -1,0 +1,45 @@
+
+GEOMORPHOLOGY_PALETTE = {
+    "Denudational Origin-Pediment-Pediplain Complex": "#FFBEBE",
+    "Denudational Origin-Highly Dissected Hills and Valleys": "#FF7F7F",
+    "Structural Origin-Highly Dissected Hills and Valleys": "#E69800",
+    "Structural Origin-Moderately Dissected": "#D47E00",
+    "Structural Origin-Low Dissected": "#FFAA00",
+    "Fluvial Origin-Older Alluvial Plain": "#BEFFE8",
+    "Fluvial Origin-Younger Alluvial Plain": "#A6FF00",
+    "Aeolian Origin-Aeolian Plain": "#FFFFBE",
+    "Waterbodies": "#004DA8",
+    "Sand Dune": "#FFD37F",
+    "Valley Fill": "#A5F5D0",
+    "Linear Ridge": "#FF7F00",
+    "Plateau": "#A80000",
+    "Pediment": "#FFBEBE",
+    "Structural": "#E69800",
+    "Denudational": "#FF7F7F",
+    "Alluvial": "#A6FF00",
+    "Water": "#004DA8"
+}
+
+LULC_PALETTE = {
+    "Builtup,Urban": "#FF0000",
+    "Builtup,Rural": "#964B00",
+    "Agriculture,Crop land": "#FFFFC0",
+    "Agriculture,Fallow": "#FFFACD",
+    "Agriculture,Plantation": "#FFFF00",
+    "Forest,Evergreen": "#006400",
+    "Forest,Deciduous": "#228B22",
+    "Forest,Scrub Forest": "#90EE90",
+    "Grass/Grazing": "#ADFF2F",
+    "Barren/unculturable/Wastelands,Sandy area": "#F4A460",
+    "Barren/unculturable/Wastelands,Barren rocky": "#696969",
+    "Barren/unculturable/Wastelands,Scrub land": "#DAA520",
+    "Wetlands/Water Bodies,Reservoir/Lakes/Ponds": "#0000FF",
+    "Wetlands/Water Bodies,River": "#00CED1",
+    "Urban": "#FF0000",
+    "Rural": "#964B00",
+    "Agriculture": "#FFFF00",
+    "Forest": "#006400",
+    "Scrub": "#90EE90",
+    "Water": "#0000FF",
+    "Wastelands": "#A9A9A9"
+}

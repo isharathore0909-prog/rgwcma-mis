@@ -1,0 +1,14 @@
+.wu-page-container {
+    min-height: 100vh;
+    background-color: #f1f5f9;
+    padding: 100px 1rem 2rem 1rem !important;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+.wu-content {
+    width: 100%;
+    padding: 0;
+}
+
+
+/* GP Top Bar Styles removed to use shared SelectionNavbar component */

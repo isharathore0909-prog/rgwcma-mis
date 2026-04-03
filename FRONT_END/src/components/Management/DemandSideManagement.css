@@ -1,0 +1,366 @@
+/* Professional Theme Variables - Shared with Water Utilization */
+:root {
+    --wu-primary: #1a365d;
+    --wu-accent: #2b6cb0;
+    --wu-success: #38a169;
+    --wu-danger: #e53e3e;
+    --wu-bg-light: #f8fafc;
+    --wu-border: #e2e8f0;
+    --wu-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.demand-mgmt-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 40px;
+    background: #ffffff;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    border-radius: 16px;
+    box-shadow: var(--wu-shadow);
+    border: 1px solid var(--wu-border);
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Intervention Type Tabs - Water Utilization Style */
+.intervention-tabs {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--wu-border);
+    padding-bottom: 15px;
+    overflow-x: auto;
+    justify-content: center;
+}
+
+.tab-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    min-width: 150px;
+    background: transparent;
+    border: none;
+}
+
+.tab-btn:hover {
+    background: #edf2f7;
+}
+
+.tab-btn.active {
+    background: #ebf8ff;
+    border: 1px solid var(--wu-accent);
+}
+
+.tab-btn .tab-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.tab-btn .tab-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #4a5568;
+    text-align: center;
+}
+
+.tab-btn.active .tab-label {
+    color: var(--wu-accent);
+    font-weight: 700;
+}
+
+/* Main Container Layout */
+.demand-main-container {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+/* Sidebar styling - Modified to fit theme but keep function */
+.demand-sidebar {
+    width: 320px;
+    flex-shrink: 0;
+}
+
+.season-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.season-card {
+    background: white;
+    border: 1px solid var(--wu-border);
+    border-radius: 12px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.season-card.active {
+    background: #ebf8ff;
+    border: 1px solid var(--wu-accent);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.season-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.season-name {
+    font-weight: 700;
+    color: #1a365d;
+    font-size: 0.95rem;
+}
+
+.season-stats p {
+    margin: 4px 0;
+    font-size: 0.75rem;
+    color: #4a5568;
+}
+
+/* Content Area - Water Utilization Style */
+.demand-content-area {
+    flex: 1;
+    background: white;
+    padding: 0;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: #1e3a8a;
+    /* Dark premium blue */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px 8px 0 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    border-left: 5px solid #3b82f6;
+    /* Accent pipe from screenshot */
+}
+
+.entry-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    background: #ffffff;
+    padding: 25px;
+    border: 1px solid var(--wu-border);
+    border-top: none;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.input-group input,
+.input-group select {
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: white;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.full-width-input {
+    grid-column: span 4;
+}
+
+.readonly-input {
+    background-color: #f3f4f6 !important;
+    color: #4b5563;
+    cursor: default;
+    border-color: #e5e7eb !important;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.add-btn {
+    grid-column: span 4;
+    padding: 12px;
+    background: #2b6cb0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+    background: #2c5282;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styling - Exact Water Utilization Style */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.demand-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border: 1px solid var(--wu-border);
+    min-width: 1000px;
+}
+
+.demand-table th {
+    background: #2b6cb0;
+    color: #ffffff;
+    padding: 15px;
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: normal;
+    vertical-align: middle;
+}
+
+.demand-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--wu-border);
+    font-size: 0.95rem;
+    color: #2d3748;
+}
+
+.highlight-val {
+    font-weight: 700;
+    color: var(--wu-primary);
+}
+
+.total-row {
+    background: var(--wu-bg-light);
+    font-weight: 700;
+}
+
+.mgmt-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid var(--wu-border);
+}
+
+.mgmt-btn {
+    padding: 12px 35px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s;
+    color: white;
+}
+
+.mgmt-btn.back {
+    background: #718096;
+}
+
+.mgmt-btn.save {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+}
+
+.mgmt-btn.next {
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+}
+
+.mgmt-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Vertical Form for Supply Side */
+.form-grid-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--wu-border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.form-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--wu-border);
+    background: white;
+}
+
+.form-item:last-child {
+    border-bottom: none;
+}
+
+.form-item label {
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 0.95rem;
+}
+
+.form-item input,
+.form-item select {
+    padding: 8px 12px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    background: var(--wu-bg-light);
+}
+
+.green-bg {
+    background: var(--wu-primary) !important;
+    /* Unified with WU theme */
+    color: white !important;
+    padding: 15px 20px !important;
+}
+
+.notice-text {
+    color: var(--wu-danger);
+    font-weight: 600;
+    text-align: center;
+}

@@ -1,0 +1,112 @@
+.gw-level-container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin: 20px 0;
+}
+
+.table-wrapper {
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table-header-bar {
+    background: #1a365d;
+    /* Deep blue header matching WA/WU */
+    padding: 12px 20px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    border-bottom: 1px solid #1a365d;
+    border-radius: 8px 8px 0 0;
+}
+
+.table-scroll {
+    overflow-x: auto;
+}
+
+.gw-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    min-width: 1200px;
+    /* Ensure horizontal scroll on smaller screens */
+}
+
+.gw-table th {
+    background-color: #2b6cb0;
+    /* Accent blue header */
+    color: white;
+    font-weight: 700;
+    padding: 12px 8px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid #2b6cb0;
+    text-align: center;
+    white-space: normal;
+    vertical-align: middle;
+}
+
+.gw-table th:last-child {
+    border-right: none;
+}
+
+.gw-table td {
+    padding: 15px 8px;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    height: 40px;
+    color: #2d3748;
+}
+
+.gw-table tr:nth-child(even) {
+    background-color: #fcfcfc;
+}
+
+.gw-table td:last-child {
+    border-right: none;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-back,
+.btn-save,
+.btn-next {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.2s;
+}
+
+.btn-back {
+    background: #718096;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-save {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-next {
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-back:hover,
+.btn-save:hover,
+.btn-next:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.12);
+}

@@ -1,0 +1,21 @@
+/* WaterAvailabilityPage.css */
+
+.wa-page-container {
+    padding: 100px 1rem 2rem 1rem !important;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* Top Bar & Breadcrumbs */
+
+/* GP Top Bar Styles removed to use shared SelectionNavbar component */
+
+
+/* Content Area */
+.wa-content {
+    background-color: transparent;
+    border-radius: 12px;
+    min-height: 500px;
+}

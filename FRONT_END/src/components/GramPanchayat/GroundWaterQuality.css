@@ -1,0 +1,110 @@
+.gw-quality-container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin: 20px 0;
+}
+
+.table-wrapper {
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table-header-bar {
+    background: #1a365d;
+    /* Deep blue header matching WA/WU */
+    padding: 12px 20px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    border-bottom: 1px solid #1a365d;
+    border-radius: 8px 8px 0 0;
+}
+
+.table-scroll {
+    overflow-x: auto;
+}
+
+.gw-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    min-width: 1300px;
+}
+
+.gw-table th {
+    background-color: #2b6cb0;
+    /* Accent blue header */
+    color: white;
+    font-weight: 700;
+    padding: 14px 10px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid #2b6cb0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.gw-table th:last-child {
+    border-right: none;
+}
+
+.no-data-cell {
+    text-align: center;
+    padding: 30px;
+    color: #718096;
+    font-style: italic;
+    background: white;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.btn-back,
+.btn-save,
+.btn-summary {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.btn-back {
+    background: #718096;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-save {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-summary {
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-back:hover,
+.btn-save:hover,
+.btn-summary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.12);
+}
+
+.arrow-icon {
+    font-size: 1rem;
+}

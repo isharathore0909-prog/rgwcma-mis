@@ -1,0 +1,145 @@
+.gp-card-container {
+    background: #f9f9f9;
+    /* Light background for the whole form area */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    /* Slightly rounded */
+    padding-bottom: 2rem;
+}
+
+.gp-section-header {
+    background: #1a365d;
+    /* Deep blue header color matching WA */
+    color: white;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.gp-form-body {
+    padding: 0 40px;
+    /* Indent the form content */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+}
+
+.form-row label {
+    width: 380px;
+    /* Fixed width for labels to align inputs */
+    font-weight: 700;
+    color: #333;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.input-box {
+    flex: 1;
+    background: #f5f5f5;
+    /* Light gray input background */
+    border: 1px solid #ccc;
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #333;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-box.green-text {
+    color: #1e40af;
+    /* Blue text for read-only/fetched values */
+    font-weight: 500;
+}
+
+.input-box.gray-text {
+    color: #555;
+}
+
+.input-box.placeholder-text {
+    color: #9ca3af;
+    /* Lighter text for placeholders */
+}
+
+.dropdown-look {
+    background: #efefef;
+    cursor: pointer;
+}
+
+.dropdown-arrow {
+    font-size: 0.7rem;
+    color: #666;
+}
+
+.required-star {
+    color: red;
+}
+
+/* Footer Actions */
+.gp-footer-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.warning-text {
+    color: #ef4444;
+    /* Red warning text */
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-save {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    /* Green save button matching WA */
+    color: white;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-save:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-next {
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+    /* Blue next button matching WA */
+    color: white;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-next:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}

@@ -1,0 +1,226 @@
+/* Dashboard.css */
+.dashboard-container {
+    background: var(--bg-main);
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 100px;
+    padding-bottom: 40px;
+
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 32px;
+    margin: 0 auto 40px auto;
+    width: 94%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    z-index: 10;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.filter-label {
+    font-weight: 700;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.filter-value {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+.filter-select {
+    padding: 10px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-md);
+    background-color: white;
+    min-width: 180px;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    outline: none;
+}
+
+.filter-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.filter-select:disabled {
+    background-color: #f1f5f9;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.spinner-small {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-light);
+    border-top: 2px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-left: auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Map & Timeline Container */
+.timeline-container.map-view {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    height: 100%;
+    margin-top: 0;
+    padding: 0;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Rajasthan Map Watermark */
+.map-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 90%;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rajasthan-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.map-path {
+    fill: #cbd5e1;
+    stroke: #94a3b8;
+    stroke-width: 2;
+    opacity: 0.08;
+}
+
+.map-text-title {
+    fill: #94a3b8;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    opacity: 0.12;
+}
+
+.timeline-svg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.timeline-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.timeline-items {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive Styling */
+@media (max-width: 1200px) {
+    .dashboard-container {
+        height: auto;
+        min-height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding-top: 80px;
+        background: var(--bg-main);
+    }
+
+    .filter-bar {
+        flex-wrap: wrap;
+        padding: 16px;
+        gap: 12px;
+        width: 96%;
+        margin-bottom: 20px;
+    }
+
+    .filter-select {
+        min-width: 140px;
+        flex: 1;
+    }
+
+    .timeline-container.map-view {
+        margin-top: 0;
+        padding: 20px;
+        display: block;
+        height: auto;
+    }
+
+    .map-background,
+    .timeline-svg-wrapper {
+        display: none;
+    }
+
+    .timeline-items {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding-top: 60px;
+    }
+
+    .filter-bar {
+        margin-bottom: 10px;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+
+    .filter-label {
+        font-size: 0.65rem;
+    }
+
+    .filter-value {
+        font-size: 0.8rem;
+    }
+}

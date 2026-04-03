@@ -1,0 +1,699 @@
+.water-balance-calc {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 0;
+    background: #ffffff;
+    border-radius: 12px;
+    font-family: 'Outfit', 'Inter', sans-serif;
+    min-height: 600px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+/* Sidebar Styling */
+.calc-sidebar {
+    background: #f8fafc;
+    border-right: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    background: #1e3a8a;
+    color: white;
+    padding: 16px 20px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-header svg {
+    width: 18px;
+    height: 18px;
+    color: #93c5fd;
+}
+
+.input-scroll-area {
+    padding: 20px;
+    overflow-y: visible;
+    flex-grow: 1;
+}
+
+.modern-input-group {
+    margin-bottom: 16px;
+}
+
+.modern-input-group label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 10px 12px;
+    padding-right: 45px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e293b;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    background: white;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.input-wrapper .unit {
+    position: absolute;
+    right: 12px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #94a3b8;
+}
+
+/* Main Content Styling */
+.calc-main {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+}
+
+.main-top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.main-top-nav h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+}
+
+.total-indicator {
+    background: #f0f9ff;
+    color: #0369a1;
+    padding: 8px 16px;
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #bae6fd;
+}
+
+.total-indicator .dot {
+    width: 8px;
+    height: 8px;
+    background: #0ea5e9;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #0ea5e9;
+}
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Toggle Styling */
+.type-toggle-container {
+    padding: 0 20px 15px 20px;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid #e2e8f0;
+    background: #f8fafc;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    background: white;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #475569;
+}
+
+.toggle-btn:hover {
+    background: #f1f5f9;
+}
+
+.toggle-btn.active {
+    background: #1e3a8a;
+    border-color: #1e3a8a;
+    color: white;
+}
+
+.mining-mode .toggle-btn.active {
+    background: #c2410c;
+    border-color: #c2410c;
+}
+
+.industry-mode .toggle-btn.active {
+    background: #0d9488;
+    border-color: #0d9488;
+}
+
+.project-subtitle {
+    font-size: 0.65rem;
+    font-weight: 900;
+    color: #64748b;
+    margin: 4px 0 0 0;
+    letter-spacing: 0.1em;
+}
+
+.mining-mode .sidebar-header {
+    background: #c2410c;
+}
+
+.industry-mode .sidebar-header {
+    background: #0d9488;
+}
+
+.mining-mode .total-indicator {
+    background: #fff7ed;
+    color: #9a3412;
+    border-color: #ffedd5;
+}
+
+.industry-mode .total-indicator {
+    background: #f0fdfa;
+    color: #0d9488;
+    border-color: #ccfbf1;
+}
+
+.mining-mode .total-indicator .dot {
+    background: #f97316;
+    box-shadow: 0 0 8px #f97316;
+}
+
+.industry-mode .total-indicator .dot {
+    background: #14b8a6;
+    box-shadow: 0 0 8px #14b8a6;
+}
+
+.metric-tile {
+    padding: 24px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+    position: relative;
+    overflow: visible;
+}
+
+.metric-tile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent);
+    transition: 0.5s;
+}
+
+.metric-tile:hover::before {
+    left: 100%;
+}
+
+.metric-tile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.12);
+}
+
+.tile-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.tile-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.tile-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.t-val {
+    font-size: 2.4rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.t-lbl {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: inherit;
+    opacity: 0.7;
+    margin-top: 6px;
+    letter-spacing: 0.05em;
+}
+
+/* Glass Tile Variations */
+.glass-blue {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    color: #1e40af;
+    border-color: #bfdbfe;
+}
+
+.glass-blue .tile-icon {
+    background: #1e40af;
+    color: white;
+}
+
+.glass-green {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    color: #166534;
+    border-color: #bbf7d0;
+}
+
+.glass-green .tile-icon {
+    background: #166534;
+    color: white;
+}
+
+.glass-red {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    color: #991b1b;
+    border-color: #fecaca;
+}
+
+.glass-red .tile-icon {
+    background: #991b1b;
+    color: white;
+}
+
+.glass-purple {
+    background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+    color: #6b21a8;
+    border-color: #e9d5ff;
+}
+
+.glass-purple .tile-icon {
+    background: #6b21a8;
+    color: white;
+}
+
+.impact-footer {
+    margin-top: auto;
+    font-size: 0.7rem;
+    color: #64748b;
+    font-style: italic;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 20px;
+    opacity: 0.8;
+}
+
+/* -------------------------------------------------------------------------- */
+/* PRINT DIAGRAM (Rigorous Engineering Style)                                 */
+/* -------------------------------------------------------------------------- */
+
+.water-balance-print-container {
+    display: none;
+}
+
+.water-balance-print {
+    width: 750px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 15px;
+    font-family: 'Inter', sans-serif;
+}
+
+.wb-diagram-header {
+    text-align: center;
+    border-bottom: 2px solid #000;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.wb-diagram-header h2 {
+    font-size: 1.1rem;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: 0.1em;
+}
+
+.wb-main-flow {
+    display: flex;
+    gap: 15px;
+    position: relative;
+}
+
+/* Left Summary Panel */
+.wb-summary-panel {
+    flex: 0 0 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.wb-highlight-box {
+    border: 2px solid #000;
+    padding: 12px;
+    text-align: center;
+}
+
+.wb-highlight-box .lbl {
+    font-size: 0.6rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.wb-highlight-box .val {
+    font-size: 1.1rem;
+    font-weight: 900;
+}
+
+.wb-highlight-box.primary {
+    background: #f3f4f6;
+}
+
+.wb-mini-box {
+    border: 1px solid #000;
+    padding: 6px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.wb-mini-box.fresh {
+    background: #dbeafe;
+}
+
+.wb-mini-box.treated {
+    background: #dcfce7;
+}
+
+/* Middle Breakdown Panel */
+.wb-breakdown-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.wb-detail-row {
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+
+.wb-row-label {
+    width: 140px;
+    font-size: 0.6rem;
+    font-weight: 800;
+    border: 1px solid #000;
+    padding: 4px;
+    text-align: center;
+    background: #fff;
+}
+
+.wb-row-connector {
+    flex-grow: 1;
+    height: 1px;
+    border-top: 1px dashed #000;
+    position: relative;
+}
+
+.wb-row-connector::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -3px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid #000;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+}
+
+.wb-data-cells {
+    display: flex;
+    gap: 5px;
+}
+
+.cell {
+    padding: 4px 8px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    border: 1px solid #000;
+    min-width: 65px;
+    text-align: center;
+}
+
+.cell.total {
+    background: #f8fafc;
+    border: 2px solid #000;
+}
+
+.cell.fresh {
+    background: #eff6ff;
+}
+
+.cell.flush {
+    background: #f0fdf4;
+}
+
+/* Right Processing Panel */
+.wb-processing-panel {
+    flex: 0 0 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wb-status-box {
+    width: 100%;
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+}
+
+.wb-status-box .lbl {
+    font-size: 0.55rem;
+    font-weight: 700;
+}
+
+.wb-status-box .val {
+    font-size: 0.85rem;
+    font-weight: 900;
+}
+
+.wb-status-box.waste {
+    background: #fee2e2;
+}
+
+.wb-status-box.treated {
+    background: #dcfce7;
+}
+
+.wb-status-box.final {
+    background: #064e3b;
+    color: #fff;
+    border: 2px solid #000;
+    font-weight: 800;
+    padding: 15px;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    box-shadow: 2px 2px 0 #000;
+}
+
+.wb-figure-caption {
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #000;
+    border-top: 1px solid #ddd;
+    padding-top: 5px;
+}
+
+.wb-unit-box {
+    width: 110px;
+    height: 70px;
+    border: 2px solid #dc2626;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fff;
+}
+
+.wb-unit-box .lbl {
+    font-size: 0.55rem;
+    font-weight: 700;
+    color: #dc2626;
+}
+
+.wb-unit-box .val {
+    font-size: 0.9rem;
+    font-weight: 900;
+    color: #dc2626;
+}
+
+.wb-arrow-down {
+    height: 20px;
+    width: 1px;
+    background: #000;
+    position: relative;
+}
+
+.wb-arrow-down::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: -3px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid #000;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+}
+
+.water-balance-print-container {
+    display: none;
+}
+
+@media print {
+    .water-balance-wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
+        page-break-inside: avoid !important;
+    }
+
+    .water-balance-calc {
+        display: none !important;
+    }
+
+    .water-balance-print-container {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        page-break-inside: avoid !important;
+        page-break-before: auto !important;
+        page-break-after: auto !important;
+    }
+
+    .water-balance-print {
+        display: block !important;
+        width: 100% !important;
+        padding: 5mm !important;
+        margin: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        border: 1px solid #eee !important;
+    }
+
+    .wb-diagram-header {
+        margin-top: 0 !important;
+        margin-bottom: 5px !important;
+        padding-top: 0 !important;
+        padding-bottom: 3px !important;
+    }
+
+    .wb-main-flow {
+        gap: 5px !important;
+    }
+
+    .wb-summary-panel,
+    .wb-processing-panel {
+        flex: 0 0 110px !important;
+    }
+
+    .wb-highlight-box {
+        padding: 8px !important;
+    }
+
+    .wb-highlight-box .val {
+        font-size: 0.9rem !important;
+    }
+
+    .wb-detail-row {
+        height: 24px !important;
+    }
+
+    .wb-row-label {
+        width: 90px !important;
+        font-size: 0.5rem !important;
+    }
+
+    .cell {
+        padding: 1px 2px !important;
+        font-size: 0.5rem !important;
+        min-width: 40px !important;
+    }
+
+    .wb-status-box {
+        padding: 5px !important;
+    }
+
+    .wb-status-box.final {
+        padding: 5px !important;
+        font-size: 0.6rem !important;
+    }
+
+    .wb-unit-box {
+        width: 80px !important;
+        height: 45px !important;
+    }
+
+    .wb-unit-box .val {
+        font-size: 0.65rem !important;
+    }
+
+    .wb-figure-caption {
+        margin-top: 2px !important;
+        margin-bottom: 0 !important;
+        padding-top: 2px !important;
+        padding-bottom: 0 !important;
+        font-size: 0.85rem !important;
+    }
+}

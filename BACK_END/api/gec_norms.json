@@ -1,0 +1,200 @@
+{
+  "irrigation_recharge_norms": [
+    {
+      "dtw_m_bgl": "<=10",
+      "gw_paddy": 45,
+      "gw_non_paddy": 25,
+      "sw_paddy": 50,
+      "sw_non_paddy": 30
+    },
+    {
+      "dtw_m_bgl": "11",
+      "gw_paddy": 43.3,
+      "gw_non_paddy": 23.7,
+      "sw_paddy": 48.3,
+      "sw_non_paddy": 28.7
+    },
+    {
+      "dtw_m_bgl": "12",
+      "gw_paddy": 41.7,
+      "gw_non_paddy": 22.3,
+      "sw_paddy": 46.7,
+      "sw_non_paddy": 27.3
+    },
+    {
+      "dtw_m_bgl": "13",
+      "gw_paddy": 40,
+      "gw_non_paddy": 21,
+      "sw_paddy": 45,
+      "sw_non_paddy": 26
+    },
+    {
+      "dtw_m_bgl": "14",
+      "gw_paddy": 38.3,
+      "gw_non_paddy": 19.7,
+      "sw_paddy": 43.3,
+      "sw_non_paddy": 24.7
+    },
+    {
+      "dtw_m_bgl": "15",
+      "gw_paddy": 36.7,
+      "gw_non_paddy": 18.3,
+      "sw_paddy": 41.7,
+      "sw_non_paddy": 23.3
+    },
+    {
+      "dtw_m_bgl": "16",
+      "gw_paddy": 35,
+      "gw_non_paddy": 17,
+      "sw_paddy": 40,
+      "sw_non_paddy": 22
+    },
+    {
+      "dtw_m_bgl": "17",
+      "gw_paddy": 33.3,
+      "gw_non_paddy": 15.7,
+      "sw_paddy": 38.3,
+      "sw_non_paddy": 20.7
+    },
+    {
+      "dtw_m_bgl": "18",
+      "gw_paddy": 31.7,
+      "gw_non_paddy": 14.3,
+      "sw_paddy": 36.7,
+      "sw_non_paddy": 19.3
+    },
+    {
+      "dtw_m_bgl": "19",
+      "gw_paddy": 30,
+      "gw_non_paddy": 13,
+      "sw_paddy": 35,
+      "sw_non_paddy": 18
+    },
+    {
+      "dtw_m_bgl": "20",
+      "gw_paddy": 28.3,
+      "gw_non_paddy": 11.7,
+      "sw_paddy": 33.3,
+      "sw_non_paddy": 16.7
+    },
+    {
+      "dtw_m_bgl": "21",
+      "gw_paddy": 26.7,
+      "gw_non_paddy": 10.3,
+      "sw_paddy": 31.7,
+      "sw_non_paddy": 15.3
+    },
+    {
+      "dtw_m_bgl": "22",
+      "gw_paddy": 25,
+      "gw_non_paddy": 9,
+      "sw_paddy": 30,
+      "sw_non_paddy": 14
+    },
+    {
+      "dtw_m_bgl": "23",
+      "gw_paddy": 23.3,
+      "gw_non_paddy": 7.7,
+      "sw_paddy": 28.3,
+      "sw_non_paddy": 12.7
+    },
+    {
+      "dtw_m_bgl": "24",
+      "gw_paddy": 21.7,
+      "gw_non_paddy": 6.3,
+      "sw_paddy": 26.7,
+      "sw_non_paddy": 11.3
+    },
+    {
+      "dtw_m_bgl": ">=25",
+      "gw_paddy": 20,
+      "gw_non_paddy": 5,
+      "sw_paddy": 25,
+      "sw_non_paddy": 10
+    }
+  ],
+  "canal_seepage_norms": [
+    {
+      "formation": "Unlined canals in normal soils with some clay content along with sand",
+      "recommended": 17.5,
+      "minimum": 15,
+      "maximum": 20,
+      "unit": "ham/day/million Square meters of wetted Area"
+    },
+    {
+      "formation": "Unlined canals in sandy soil with some silt content",
+      "recommended": 27.5,
+      "minimum": 25,
+      "maximum": 30,
+      "unit": "ham/day/million Square meters of wetted Area"
+    },
+    {
+      "formation": "Lined canals in normal soils with some clay content along with sand",
+      "recommended": 3.5,
+      "minimum": 3,
+      "maximum": 4,
+      "unit": "ham/day/million Square meters of wetted Area"
+    },
+    {
+      "formation": "Lined canals in sandy soil with some silt content",
+      "recommended": 5.5,
+      "minimum": 5,
+      "maximum": 6,
+      "unit": "ham/day/million Square meters of wetted Area"
+    },
+    {
+      "formation": "All canals in hard rock area",
+      "recommended": 3.5,
+      "minimum": 3,
+      "maximum": 4,
+      "unit": "ham/day/million Square meters of wetted Area"
+    }
+  ],
+  "water_conservation_structures_recharge": {
+    "total_annual_recharge_percent_of_gross_storage": 40,
+    "monsoon_recharge_percent": 20,
+    "non_monsoon_recharge_percent": 20
+  },
+  "livestock_norms": [
+    {
+      "type": "Cattle",
+      "requirement_lpcd": 85
+    },
+    {
+      "type": "Buffalo",
+      "requirement_lpcd": 100
+    },
+    {
+      "type": "Sheep",
+      "requirement_lpcd": 7
+    },
+    {
+      "type": "Goat",
+      "requirement_lpcd": 7
+    },
+    {
+      "type": "Horse",
+      "requirement_lpcd": 25
+    },
+    {
+      "type": "Mule",
+      "requirement_lpcd": 22
+    },
+    {
+      "type": "Donkey",
+      "requirement_lpcd": 10
+    },
+    {
+      "type": "Camel",
+      "requirement_lpcd": 60
+    },
+    {
+      "type": "Pig",
+      "requirement_lpcd": 15
+    },
+    {
+      "type": "Poultry",
+      "requirement_lpcd": 0.3
+    }
+  ]
+}

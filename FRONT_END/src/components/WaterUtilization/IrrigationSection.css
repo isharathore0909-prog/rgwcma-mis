@@ -1,0 +1,184 @@
+/* Irrigation Styles */
+.irrigation-layout {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.irrigation-sidebar {
+    width: 320px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.season-card {
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.season-card.active {
+    border-color: var(--wu-accent);
+    background: #eff6ff;
+    box-shadow: 0 10px 15px -3px rgba(43, 108, 176, 0.1);
+}
+
+.season-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.season-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: #f1f5f9;
+    padding: 8px;
+}
+
+.season-card.active .season-icon {
+    background: #ffffff;
+}
+
+.season-name {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #475569;
+}
+
+.season-card.active .season-name {
+    color: var(--wu-primary);
+}
+
+.demand-badge {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 6px 12px;
+    border-radius: 6px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.season-card.active .demand-badge {
+    background: var(--wu-accent);
+    color: white;
+    border-color: var(--wu-accent);
+}
+
+.irrigation-main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.irrigation-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.summary-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.summary-item label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+.summary-item input {
+    padding: 8px 12px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    background: #f8fafc;
+    font-weight: 600;
+}
+
+.crop-table-container {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.crop-table-title {
+    background: var(--wu-primary);
+    color: white;
+    padding: 12px 20px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.btn-add-crop {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 15px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-add-crop:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-delete-crop {
+    background: #fee2e2;
+    color: #ef4444;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.btn-delete-crop:hover {
+    background: #fecaca;
+}
+
+@media (max-width: 1200px) {
+    .irrigation-layout {
+        flex-direction: column;
+    }
+
+    .irrigation-sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    .season-card {
+        min-width: 200px;
+    }
+}

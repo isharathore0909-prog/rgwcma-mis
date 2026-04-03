@@ -1,0 +1,195 @@
+/* ProcessNode Styling */
+.process-node {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+    /* Reduced from 200px */
+    pointer-events: none;
+    transition: transform var(--transition-normal);
+}
+
+.process-node * {
+    pointer-events: auto;
+}
+
+.process-node.top {
+    transform: translate(-50%, -100%);
+    flex-direction: column;
+}
+
+.process-node.bottom {
+    transform: translate(-50%, 0);
+    flex-direction: column-reverse;
+}
+
+/* The Circle Node on the Timeline */
+.timeline-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 4px solid var(--node-color);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 1), var(--shadow-sm);
+    z-index: 5;
+    transition: all var(--transition-normal);
+}
+
+.node-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    padding: 16px;
+    /* Reduced from 20px */
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-premium);
+    width: 220px;
+    /* Reduced from 260px */
+    border: 3px solid #2563eb;
+    transition: all var(--transition-normal);
+}
+
+.process-node.top .node-content {
+    margin-bottom: 30px;
+}
+
+.process-node.bottom .node-content {
+    margin-top: 30px;
+}
+
+/* Connector hover effect */
+.process-node:hover .timeline-circle {
+    transform: scale(1.3);
+    box-shadow: 0 0 15px var(--node-color), 0 0 0 4px rgba(255, 255, 255, 1);
+}
+
+.process-node:hover .node-content {
+    transform: translateY(calc(var(--y-shift, 0px) * -1));
+    box-shadow: var(--shadow-lg), 0 0 25px rgba(37, 99, 235, 0.2);
+    border-color: #1d4ed8;
+}
+
+.process-node.top:hover {
+    --y-shift: 10px;
+}
+
+.process-node.bottom:hover {
+    --y-shift: -10px;
+}
+
+.step-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.step-number {
+    font-size: 2.5rem;
+    /* Reduced from 3rem */
+    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+    color: var(--node-color);
+    line-height: 1;
+    opacity: 0.9;
+}
+
+.step-title {
+    font-size: 0.85rem;
+    /* Reduced from 0.95rem */
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    letter-spacing: 0.05em;
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+.step-description {
+    font-size: 0.75rem;
+    /* Reduced from 0.8rem */
+    color: var(--text-secondary);
+    line-height: 1.4;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.step-icon-container {
+    margin-top: 8px;
+    width: 100%;
+}
+
+.process-icon-img {
+    width: 100%;
+    height: 120px;
+    /* Reduced from 150px */
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    background: white;
+    padding: 8px;
+    box-shadow: var(--shadow-sm);
+    border: 2px solid #3b82f6;
+    transition: all var(--transition-normal);
+}
+
+.process-node:hover .process-icon-img {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+/* Responsive Styling */
+@media (max-width: 1200px) {
+    .process-node {
+        position: static !important;
+        width: 100% !important;
+        max-width: 400px;
+        margin: 20px auto;
+        transform: none !important;
+        pointer-events: auto;
+    }
+
+    .process-node.top,
+    .process-node.bottom {
+        flex-direction: column;
+        transform: none !important;
+    }
+
+    .timeline-circle {
+        display: none;
+    }
+
+    .node-content {
+        width: 100%;
+        margin: 0 !important;
+        border-width: 2px;
+    }
+
+    .process-node:hover .node-content {
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 768px) {
+    .node-content {
+        padding: 16px;
+    }
+
+    .step-number {
+        font-size: 2.2rem;
+    }
+
+    .step-title {
+        font-size: 0.85rem;
+    }
+
+    .process-icon-img {
+        height: 120px;
+    }
+}

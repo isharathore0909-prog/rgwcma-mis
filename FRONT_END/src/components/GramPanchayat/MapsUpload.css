@@ -1,0 +1,182 @@
+.maps-upload-container {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin: 20px 0;
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+}
+
+.upload-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.upload-row {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    border-bottom: 1px solid #edf2f7;
+    gap: 15px;
+}
+
+.row-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.upload-row:last-child {
+    border-bottom: none;
+}
+
+.row-label {
+    flex: 1;
+}
+
+.row-number {
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.row-title {
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 1.05rem;
+}
+
+.file-types {
+    color: #ed8936;
+    /* Orange color from image */
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.row-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.file-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.file-input-wrapper input[type="file"] {
+    display: none;
+}
+
+.choose-file-btn {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #4a5568;
+    transition: all 0.2s ease;
+}
+
+.choose-file-btn:hover {
+    background: #edf2f7;
+    border-color: #cbd5e0;
+}
+
+.file-name {
+    color: #4299e1;
+    /* Blue link-like color for filename */
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.file-name:hover {
+    text-decoration: underline;
+}
+
+.delete-btn {
+    background: #81a9cd;
+    /* Muted blue from image */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.delete-btn:hover {
+    background: #6a95bd;
+}
+
+.file-name {
+    color: #4299e1;
+    /* Blue link-like color for filename */
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.file-name.download-link {
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.file-name.download-link:hover {
+    color: #3182ce;
+    text-decoration: underline;
+    transform: translateY(-1px);
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.btn-back,
+.btn-save,
+.btn-next {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.2s;
+}
+
+.btn-back:active,
+.btn-save:active,
+.btn-next:active {
+    transform: scale(0.98);
+}
+
+.btn-back {
+    background: #718096;
+    /* Grey for back */
+    color: white;
+}
+
+.btn-save {
+    background: #48bb78;
+    /* Green primary */
+    color: white;
+}
+
+.btn-next {
+    background: #3182ce;
+    /* Blue primary */
+    color: white;
+}
+
+.btn-back:hover,
+.btn-save:hover,
+.btn-next:hover {
+    opacity: 0.91;
+}

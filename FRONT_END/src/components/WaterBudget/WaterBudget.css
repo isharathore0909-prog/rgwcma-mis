@@ -1,0 +1,227 @@
+/* Water Budget Styling - Mirrored from Water Availability */
+:root {
+    --wbg-primary: #1a365d;
+    --wbg-accent: #2b6cb0;
+    --wbg-success: #38a169;
+    --wbg-danger: #e53e3e;
+    --wbg-bg-light: #f8fafc;
+    --wbg-border: #e2e8f0;
+    --wbg-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.water-budget-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 40px;
+    background-color: white;
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    border-radius: 16px;
+    box-shadow: var(--wbg-shadow);
+    overflow: hidden;
+}
+
+.wbg-header {
+    margin-bottom: 30px;
+    text-align: center;
+    background: transparent;
+    padding: 0;
+    color: var(--wbg-primary);
+    border-bottom: 1px solid var(--wbg-border);
+    padding-bottom: 20px;
+}
+
+.wbg-header h2 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    text-shadow: none;
+}
+
+.wbg-section {
+    margin: 30px;
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid var(--wbg-border);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.wbg-section:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.wbg-section-title {
+    background-color: var(--wbg-primary);
+    color: white;
+    padding: 16px 24px;
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-bottom: 2px solid var(--wbg-primary);
+    border-radius: 8px 8px 0 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.wbg-form-grid {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wbg-form-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.wbg-form-row:last-child {
+    border-bottom: none;
+}
+
+.wbg-form-row label {
+    flex: 2;
+    color: #4a5568;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.wbg-form-row input,
+.wbg-form-row select,
+.wbg-form-row .wbg-value {
+    flex: 1;
+    max-width: 550px;
+    padding: 12px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+    font-size: 1.1rem;
+    color: #2d3748;
+    height: 48px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.wbg-form-row input:focus,
+.wbg-form-row select:focus {
+    outline: none;
+    border-color: var(--wbg-accent);
+    box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
+    background-color: white;
+}
+
+.wbg-form-row.highlight {
+    background-color: #f0f7ff;
+    padding: 15px 20px;
+    margin: 10px -20px;
+    border-radius: 8px;
+    border: 1px dashed #bee3f8;
+}
+
+.wbg-form-row.highlight .wbg-value {
+    background-color: transparent;
+    border: none;
+    font-weight: 900;
+    color: var(--wbg-accent);
+    font-size: 1.4rem;
+    box-shadow: none;
+}
+
+.wbg-form-row.highlight .wbg-value.font-large {
+    font-size: 2.2rem;
+    color: var(--wbg-primary);
+}
+
+.info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background-color: var(--wbg-accent);
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    font-style: normal;
+    margin-left: 10px;
+    cursor: help;
+    opacity: 0.8;
+}
+
+.info-icon:hover {
+    opacity: 1;
+}
+
+.required {
+    color: var(--wbg-danger);
+    margin-left: 5px;
+}
+
+.wbg-note {
+    color: #718096;
+    margin: 10px 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-style: italic;
+    padding-left: 10px;
+    border-left: 3px solid var(--wbg-success);
+}
+
+.wbg-footer-msg {
+    text-align: center;
+    color: var(--wbg-danger);
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    font-size: 0.95rem;
+}
+
+.wbg-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.wbg-btn {
+    padding: 12px 35px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.wbg-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.12);
+}
+
+.wbg-btn-back {
+    background-color: #718096;
+}
+
+.wbg-btn-save {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+}
+
+.wbg-btn-summary {
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+}
+
+.wbg-form-row.indented {
+    padding-left: 40px;
+}
+
+.wbg-form-row.full-width {
+    flex-direction: column;
+    align-items: flex-start;
+}

@@ -1,0 +1,84 @@
+/* Gram Panchayat Professional Nav Bar */
+:root {
+    --gp-nav-primary: #1a365d;
+    --gp-nav-accent: #2b6cb0;
+    --gp-nav-bg: #ffffff;
+    --gp-nav-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+}
+
+.gp-header-nav {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 15px;
+    overflow-x: auto;
+    justify-content: center;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    position: static;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+.nav-item:hover {
+    background: #edf2f7;
+}
+
+.nav-item.active {
+    background: #ebf8ff;
+    border: 1px solid #2b6cb0;
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 2px solid #e2e8f0;
+}
+
+.nav-item.active .icon-circle {
+    border-color: #2b6cb0;
+}
+
+.nav-icon-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.label-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #4a5568;
+    text-align: center;
+}
+
+.nav-item.active .nav-label {
+    color: #2b6cb0;
+}

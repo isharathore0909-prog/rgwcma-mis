@@ -1,0 +1,32 @@
+/* Professional Gram Panchayat Page Styling */
+:root {
+    --gp-primary: #1e293b;
+    --gp-accent: #2563eb;
+    --gp-bg: #f1f5f9;
+}
+
+.gp-container {
+    padding: 100px 1rem 2rem 1rem;
+    background-color: var(--gp-bg);
+    min-height: 100vh;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    position: relative;
+}
+
+
+
+/* GP Top Bar Styles removed to use shared SelectionNavbar component */
+
+
+.placeholder-step {
+    padding: 80px 40px;
+    text-align: center;
+    font-size: 1.6rem;
+    color: #94a3b8;
+    background: white;
+    border-radius: 16px;
+    border: 2px dashed #cbd5e1;
+    margin: 30px 0;
+    font-weight: 700;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
