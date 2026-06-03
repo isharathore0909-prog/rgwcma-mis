@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputRow, CalculatedRow, SectionHeader, MultiInputRow, SelectRow, CheckboxRow } from './FormHelpers';
+import { InputRow, CalculatedRow, SectionHeader, MultiInputRow, SelectRow, CheckboxRow, EditableRow } from './FormHelpers';
 import { GEC_NORMS } from '../../../utils/gecNorms';
 
 const MonsoonTab = ({ formData = {}, handleChange }) => {
@@ -104,7 +104,7 @@ const MonsoonTab = ({ formData = {}, handleChange }) => {
                 )}
 
                 {/* GW Irrigation */}
-                <CalculatedRow className="indented highlight-sub" label="3. Recharge from GW Irrigation (RGWI) (ha m):" value={formatNum(formData.gwRechargeFromGWIirrigationMonsoon)} />
+                <EditableRow label="3. Recharge from GW Irrigation (RGWI) (ha m):" field="gwRechargeFromGWIIrrigationMonsoon" value={formData.gwRechargeFromGWIIrrigationMonsoon} onChange={handleChange} />
 
 
                 {/* Tanks */}
@@ -116,7 +116,7 @@ const MonsoonTab = ({ formData = {}, handleChange }) => {
                         { placeholder: "Recharge Factor", value: formData.rtp_rechargeFactor, onChange: v => handleChange('rtp_rechargeFactor', v), title: `Recharge Factor - GEC Rec: ${GEC_NORMS.tanks_and_ponds.recommended}` }
                     ]}
                 />
-                <CalculatedRow className="indented highlight-sub" label="Recharge from Tanks (ha m):" value={formatNum(formData.gwRechargeFromTanksMonsoon)} />
+                <EditableRow label="Recharge from Tanks (ha m):" field="gwRechargeFromTanksMonsoon" value={formData.gwRechargeFromTanksMonsoon} onChange={handleChange} />
 
                 {/* WCS */}
                 <MultiInputRow
@@ -127,7 +127,7 @@ const MonsoonTab = ({ formData = {}, handleChange }) => {
                         { placeholder: "RF (fraction)", value: formData.rwcs_rechargeFactor, onChange: v => handleChange('rwcs_rechargeFactor', v), title: `Recharge Factor - GEC Rec: ${GEC_NORMS.wcs.monsoon / 100.0}` }
                     ]}
                 />
-                <CalculatedRow className="indented highlight-sub" label="Recharge from WCS (ha m):" value={formatNum(formData.gwRechargeFromWCSMonsoon)} />
+                <EditableRow label="Recharge from WCS (ha m):" field="gwRechargeFromWCSMonsoon" value={formData.gwRechargeFromWCSMonsoon} onChange={handleChange} />
 
                 {/* Urban Pipeline */}
                 {formData.unitType === 'URBAN' && (
@@ -138,12 +138,26 @@ const MonsoonTab = ({ formData = {}, handleChange }) => {
                     </>
                 )}
 
-                <CalculatedRow
-                    className="label-only"
-                    label="Total Recharge from Other Sources (ha m):"
-                    value={formatNum(formData.gwRechargeOtherMonsoon)}
-                    style={{ marginTop: '15px', borderTop: '1px solid #eee', paddingTop: '10px' }}
-                />
+                {(() => {
+                    const ac = parseFloat(formData.areaCommandHa) || 0;
+                    const canalVal = ac > 0.01 ? (parseFloat(formData.gwRechargeFromCanalsMonsoon) || 0) : 0;
+                    const swVal = ac > 0.01 ? (parseFloat(formData.gwRechargeFromIrrigationMonsoon) || 0) : 0;
+
+                    const totalOthers = canalVal + swVal +
+                        (parseFloat(formData.gwRechargeFromTanksMonsoon) || 0) +
+                        (parseFloat(formData.gwRechargeFromWCSMonsoon) || 0) +
+                        (parseFloat(formData.gwRechargeFromPipelines) || 0) +
+                        (parseFloat(formData.gwRechargeFromGWIIrrigationMonsoon) || 0);
+
+                    return (
+                        <CalculatedRow
+                            className="label-only"
+                            label="Total Recharge from Other Sources (ha m):"
+                            value={formatNum(totalOthers)}
+                            style={{ marginTop: '15px', borderTop: '1px solid #eee', paddingTop: '10px' }}
+                        />
+                    );
+                })()}
 
                 <CalculatedRow className="highlight" label="Calculated Recharge (Water Balance Equations) (ha m):" value={formatNum(formData.gwRechargeWtMethod)} />
 

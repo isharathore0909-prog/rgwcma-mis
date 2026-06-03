@@ -32,8 +32,7 @@ const Dashboard = () => {
         { id: 5, title: 'Water Budget', subtitle: 'Annual accounting of water inflow vs outflow', route: '/water-budget' },
         { id: 6, title: 'Demand Side', subtitle: 'Measures to reduce water demand and improve efficiency', route: '/demand-side-management' },
         { id: 7, title: 'Supply Side', subtitle: 'Measures to enhance and recharge water resources', route: '/supply-side-management' },
-        { id: 8, title: 'Impact Assessment', subtitle: 'Evaluating the potential outcomes and effectiveness of planned interventions', route: '/impact-assessment' },
-        { id: 9, title: 'Final Water Security Plan Report', subtitle: 'Approved action plan for sustainable water management', route: '/final-report' },
+        { id: 8, title: 'Final Water Security Plan Report', subtitle: 'Approved action plan for sustainable water management', route: '/final-report' },
     ];
 
     const handleCardClick = (item) => {
@@ -62,7 +61,7 @@ const Dashboard = () => {
         const spacing = 86 / (flowData.length - 1);
         return flowData.map((_, i) => ({
             x: 7 + (i * spacing),
-            y: 54,
+            y: 46,
             position: (i + 1) % 2 !== 0 ? 'top' : 'bottom'
         }));
     }, [flowData.length]);

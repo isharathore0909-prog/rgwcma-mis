@@ -554,8 +554,7 @@ const ImpactAssessmentPage = () => {
                 </div>
 
                 <div className="wa-report-actions no-print">
-                    <button className="btn-back" onClick={() => navigate('/supply-side-management', { state: persistedState })}>Back</button>
-                    <button className="btn-next" onClick={() => navigate('/final-report', { state: persistedState })}>Go to Final Report</button>
+                    <button className="btn-back" onClick={() => navigate('/', { state: persistedState })}>Back to Dashboard</button>
                 </div>
             </div>
         </div >

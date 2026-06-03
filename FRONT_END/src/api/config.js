@@ -1,5 +1,5 @@
-export const BASE_URL = 'https://rgwcma-mis.geoplanetsolution.in/api';
-// export const BASE_URL = 'http://localhost:8000/api';
+// export const BASE_URL = 'https://rgwcma-mis.geoplanetsolution.in/api';
+export const BASE_URL = 'http://localhost:8000/api';
 
 export const ASSET_URLS = {
     icons8: 'https://img.icons8.com/color/',

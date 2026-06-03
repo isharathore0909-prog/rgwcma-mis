@@ -4,9 +4,9 @@ import { locationService } from '../../services/locationService';
 import './GPSummaryReport.css';
 import ReportHeader from '../Shared/ReportHeader';
 import ReportBreadcrumb from '../Shared/ReportBreadcrumb';
-import LocationMap from '../ImpactAssessment/LocationMap';
-import DrainageMap from '../ImpactAssessment/DrainageMap';
-import AquiferMap from '../ImpactAssessment/AquiferMap';
+import LocationMap from '../GIS/LocationMap';
+import DrainageMap from '../GIS/DrainageMap';
+import AquiferMap from '../GIS/AquiferMap';
 
 const GPSummaryReport = ({ data, onBack, onWaterAvailability }) => {
     const locationHook = useLocation();

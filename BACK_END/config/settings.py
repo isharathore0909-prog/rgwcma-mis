@@ -64,8 +64,8 @@ SECRET_KEY = 'django-insecure-x9&x^ha03na1d10&wah%1_%p(l$vszajp^ighh)r_n*4i7i-+1
 DEBUG = True
 
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
-#ALLOWED_HOSTS = ['*']
+_env_hosts = [h for h in os.getenv("ALLOWED_HOSTS", "").split(",") if h]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"] + _env_hosts
 
 # Application definition
 
@@ -81,6 +81,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'corsheaders',
     'api',
+    'account_app',
 ]
 
 MIDDLEWARE = [

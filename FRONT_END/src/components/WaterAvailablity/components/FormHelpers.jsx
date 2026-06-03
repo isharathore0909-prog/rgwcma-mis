@@ -11,6 +11,9 @@ export const InputRow = ({ label, field, value, onChange, type = "text", classNa
     </div>
 );
 
+// Wrapper for previously calculated fields that are now editable
+export const EditableRow = InputRow;
+
 export const CalculatedRow = ({ label, value, className = "", isPercentage = false, valueClass = "" }) => {
     // Check if the value is purely a string (like "Yes", "No") or a number
     const isNumeric = (val) => {

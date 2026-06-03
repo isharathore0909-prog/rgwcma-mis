@@ -5,7 +5,6 @@ import { locationService } from '../../services/locationService';
 import { useLanguage } from '../../context/LanguageContext';
 import { useScrollToTop } from '../../hooks/useScrollToTop';
 import '../WaterAvailability/WaterAvailabilityPage.css';
-import '../ImpactAssessment/ImpactAssessmentPage.css';
 import './FinalReportPage.css';
 
 // Optimized Components
@@ -179,7 +178,7 @@ const FinalReportPage = () => {
                 </div>
 
                 <div className="wa-report-actions no-print">
-                    <button className="btn-back" onClick={() => navigate('/impact-assessment', { state: location.state })}>Back</button>
+                    <button className="btn-back" onClick={() => navigate('/supply-side-management', { state: location.state })}>Back</button>
                     <button className="btn-next" onClick={() => navigate('/')}>Finish</button>
                 </div>
             </div>

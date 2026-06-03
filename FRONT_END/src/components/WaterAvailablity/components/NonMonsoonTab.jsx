@@ -4,14 +4,16 @@ import {
   CalculatedRow,
   SectionHeader,
   MultiInputRow,
-  SelectRow
+  SelectRow,
+  EditableRow
 } from './FormHelpers';
 
 import { GEC_NORMS } from '../../../utils/gecNorms';
 
 const NonMonsoonTab = ({
   formData = {},
-  handleChange
+  handleChange,
+  setFormData
 }) => {
   // Handler for canal type selection
   const handleCanalTypeChange = (fieldPrefix, typeName) => {
@@ -120,10 +122,11 @@ const NonMonsoonTab = ({
             { placeholder: "GW RFF", value: formData.rgwi_gw_rff_nm, onChange: v => handleChange('rgwi_gw_rff_nm', v), title: "GW RFF" }
           ]}
         />
-        <CalculatedRow
-          className="indented highlight-sub"
+        <EditableRow
           label="Total Return Flow from Irrigation (ha m):"
-          value={formatNum(formData.gwRechargeFromIrrigationNonMonsoon)}
+          field="gwRechargeFromIrrigationNonMonsoon"
+          value={formData.gwRechargeFromIrrigationNonMonsoon}
+          onChange={handleChange}
         />
 
         {/* Tanks/Ponds Recharge */}
@@ -135,10 +138,11 @@ const NonMonsoonTab = ({
             { placeholder: "Recharge Factor", value: formData.rtp_rechargeFactor_nm, onChange: v => handleChange('rtp_rechargeFactor_nm', v), title: "Recharge Factor - GEC Rec: 0.0014" }
           ]}
         />
-        <CalculatedRow
-          className="indented highlight-sub"
+        <EditableRow
           label="Recharge from Tanks & Ponds (ha m):"
-          value={formatNum(formData.gwRechargeFromTanksNonMonsoon)}
+          field="gwRechargeFromTanksNonMonsoon"
+          value={formData.gwRechargeFromTanksNonMonsoon}
+          onChange={handleChange}
         />
 
         {/* WCS Recharge */}
@@ -149,17 +153,33 @@ const NonMonsoonTab = ({
             { placeholder: "RF (e.g. 0.2)", value: formData.rwcs_rechargeFactor_nm, onChange: v => handleChange('rwcs_rechargeFactor_nm', v), title: "Recharge Factor - GEC Rec: 0.2" }
           ]}
         />
-        <CalculatedRow
-          className="indented highlight-sub"
+        <EditableRow
           label="Recharge from WCS (ha m):"
-          value={formatNum(formData.gwRechargeFromWCSNonMonsoon)}
+          field="gwRechargeFromWCSNonMonsoon"
+          value={formData.gwRechargeFromWCSNonMonsoon}
+          onChange={handleChange}
         />
 
         {/* Backend total */}
-        <div className="wa-form-row highlight blue" style={{ marginTop: '20px' }}>
-          <label>Total Non-Monsoon Recharge (ha m):</label>
-          <span className="wa-value font-large">{formatNum(formData.totalNonMonsoonRecharge)}</span>
-        </div>
+        {(() => {
+          const ac = parseFloat(formData.areaCommandHa) || 0;
+          const canalVal = ac > 0.01 ? (parseFloat(formData.gwRechargeFromCanalsNonMonsoon) || 0) : 0;
+          const swVal = ac > 0.01 ? (parseFloat(formData.gwRechargeFromIrrigationNonMonsoon) || 0) : 0;
+
+          const totalOthers = canalVal + swVal +
+            (parseFloat(formData.gwRechargeFromTanksNonMonsoon) || 0) +
+            (parseFloat(formData.gwRechargeFromWCSNonMonsoon) || 0);
+
+          const totalRainfall = parseFloat(formData.gwRechargeRainfallNonMonsoon) || 0;
+          const totalNM = (totalRainfall + totalOthers);
+
+          return (
+            <div className="wa-form-row highlight blue" style={{ marginTop: '20px' }}>
+              <label>Total Non-Monsoon Recharge (ha m):</label>
+              <span className="wa-value font-large">{formatNum(totalNM)}</span>
+            </div>
+          );
+        })()}
 
 
       </div>

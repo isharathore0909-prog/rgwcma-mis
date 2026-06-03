@@ -31,4 +31,5 @@ urlpatterns = [
     path('waterbodies-info/', WaterbodiesInfoView.as_view(), name='waterbodies_info'),
     path('infrastructure-info/', InfrastructureInfoView.as_view(), name='infrastructure_info'),
     path('locations/', include('api.locations.urls')),
+    path('account/', include('account_app.urls')),
 ]

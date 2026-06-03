@@ -1,17 +1,17 @@
 import React, { useMemo } from 'react';
 import Figure from './Figure';
 import ChapterSection from './ChapterSection';
-import ContourMap from '../ImpactAssessment/ContourMap';
-import AquiferTrendGraph from '../ImpactAssessment/AquiferTrendGraph';
-import WellLocationMap from '../ImpactAssessment/WellLocationMap';
-import WaterQualityGraph from '../ImpactAssessment/WaterQualityGraph';
-import LULCMap from '../ImpactAssessment/LULCMap';
-import DEMMap from '../ImpactAssessment/DEMMap';
-import GeomorphologyMap from '../ImpactAssessment/GeomorphologyMap';
-import AquiferMap from '../ImpactAssessment/AquiferMap';
-import Hydrograph from '../ImpactAssessment/Hydrograph';
-import DrainageMap from '../ImpactAssessment/DrainageMap';
-import DEMContourMap from '../ImpactAssessment/DEMContourMap';
+import ContourMap from '../GIS/ContourMap';
+import AquiferTrendGraph from '../GIS/AquiferTrendGraph';
+import WellLocationMap from '../GIS/WellLocationMap';
+import WaterQualityGraph from '../GIS/WaterQualityGraph';
+import LULCMap from '../GIS/LULCMap';
+import DEMMap from '../GIS/DEMMap';
+import GeomorphologyMap from '../GIS/GeomorphologyMap';
+import AquiferMap from '../GIS/AquiferMap';
+import Hydrograph from '../GIS/Hydrograph';
+import DrainageMap from '../GIS/DrainageMap';
+import DEMContourMap from '../GIS/DEMContourMap';
 
 export const ChapterGPInfo = ({ metaData, isPrint }) => (
     <ChapterSection title="Gram Panchayat Information" hasSpacer={false} colSpan={4}>

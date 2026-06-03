@@ -16,7 +16,6 @@ const WaterBalancePage = lazy(() => import('./pages/WaterBalance/WaterBalancePag
 const WaterBudgetPage = lazy(() => import('./pages/WaterBudget/WaterBudgetPage'));
 const DemandSideManagementPage = lazy(() => import('./pages/Management/DemandSideManagementPage'));
 const SupplySideManagementPage = lazy(() => import('./pages/Management/SupplySideManagementPage'));
-const ImpactAssessmentPage = lazy(() => import('./pages/ImpactAssessment/ImpactAssessmentPage'));
 const FinalReportPage = lazy(() => import('./pages/FinalReport/FinalReportPage'));
 
 const PageLoader = () => (
@@ -82,7 +81,6 @@ function App() {
                             <Route path="/water-budget" element={<WaterBudgetPage />} />
                             <Route path="/demand-side-management" element={<DemandSideManagementPage />} />
                             <Route path="/supply-side-management" element={<SupplySideManagementPage />} />
-                            <Route path="/impact-assessment" element={<ImpactAssessmentPage />} />
                             <Route path="/final-report" element={<FinalReportPage />} />
                         </Routes>
                     </Suspense>

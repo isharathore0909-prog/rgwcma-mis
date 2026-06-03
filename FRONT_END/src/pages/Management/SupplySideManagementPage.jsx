@@ -129,7 +129,7 @@ const SupplySideManagementPage = () => {
                 }}
                 onBack={() => setShowSummary(false)}
                 onDownload={() => alert('Downloading Report...')}
-                onNext={() => navigate('/impact-assessment', { state: location.state })}
+                onNext={() => navigate('/final-report', { state: location.state })}
             />
         );
     }

@@ -1,0 +1,126 @@
+.header-container {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-card);
+    transition: var(--transition-normal);
+    z-index: 1000;
+}
+
+.header-container.scrolled {
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-md);
+}
+
+.header-main {
+    width: 100%;
+    padding: 0.8rem 0;
+    transition: var(--transition-normal);
+}
+
+.header-main.compact {
+    padding: 0.4rem 0;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.branding-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 54px;
+    width: auto;
+    transition: var(--transition-normal);
+}
+
+.header-main.compact .logo-img {
+    height: 42px;
+}
+
+.separator-line {
+    width: 2px;
+    height: 36px;
+    background: linear-gradient(to bottom, transparent, #e2e8f0, transparent);
+    border-radius: 2px;
+}
+
+.title-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.department-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.1;
+}
+
+.govt-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin: 0.2rem 0 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.emblem-wrapper {
+    display: flex;
+    align-items: center;
+    background: var(--bg-main);
+    padding: 6px;
+    border-radius: var(--radius-md);
+}
+
+.emblem-img {
+    height: 48px;
+    width: auto;
+    transition: var(--transition-normal);
+}
+
+.header-main.compact .emblem-img {
+    height: 38px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 44px;
+    }
+
+    .department-name {
+        font-size: 1rem;
+    }
+
+    .govt-name {
+        font-size: 0.7rem;
+    }
+}
+
+@media print {
+    .header-container {
+        display: none !important;
+    }
+}
